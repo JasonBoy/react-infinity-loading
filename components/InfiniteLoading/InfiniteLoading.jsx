@@ -10,6 +10,9 @@ import {EventEmitter} from 'fbemitter';
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import styled from 'styled-components';
+
+import Loading from '../Loading';
 
 export const emitter = new EventEmitter();
 export const TYPE = {
@@ -121,7 +124,7 @@ class InfiniteLoading extends React.Component {
       <div className={classnames('infinite-loading')}
            ref={ele => this.loadingDom = ele}
       >
-        {this.props.children || 'loading...'}
+        {this.props.children || <Loading/>}
       </div>
     );
   }
