@@ -2,5 +2,5 @@
   "name": "InfiniteLoading",
   "version": "0.0.1",
   "private": true,
-  "main": "InfiniteLoading.js"
+  "main": "InfiniteLoading.jsx"
 }
