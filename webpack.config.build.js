@@ -1,16 +1,17 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PROD_MODE = process.env.NODE_ENV === 'production';
 
-const entry = path.resolve(__dirname, 'demo/index.js');
+const entry = path.resolve(__dirname, 'components/InfiniteLoading/InfiniteLoading.jsx');
 
 const config = {
   entry: entry,
   output: {
-    path: path.resolve(__dirname, 'build/'),
-    filename: 'index.js',
+    path: path.resolve(__dirname, 'dist/'),
+    filename: PROD_MODE ? 'react-infinite-loading.min.js' : 'react-infinite-loading.js',
+    library: 'InfiniteLoading',
+    libraryTarget: 'umd',
   },
   module: {
     rules: [
@@ -36,14 +37,9 @@ const config = {
         'NODE_ENV': JSON.stringify(PROD_MODE ? 'production' : 'development')
       }
     }),
-    new HtmlWebpackPlugin({
-      template: './demo/index.html',
-      filename: 'index.html',
-      inject: 'body',
-      chunksSortMode: 'dependency'
-    })
+
   ],
-  devtool: false,
+  devtool: 'source-map',
 };
 
 if(PROD_MODE) {
@@ -59,6 +55,5 @@ if(PROD_MODE) {
     mangle: true,
   }));
 }
-
 
 module.exports = config;
