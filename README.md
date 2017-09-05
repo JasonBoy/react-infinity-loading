@@ -1,2 +1,2 @@
 # react-infinite-loading
-Event-driven infinite scroll/loading for React, especially for mobile
+Event-driven, fully-controlled infinite scroll loading for React
