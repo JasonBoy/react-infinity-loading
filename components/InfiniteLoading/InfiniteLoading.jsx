@@ -1,6 +1,6 @@
 /*!
  * @license MIT
- * Event-driven, fully-controlled infinite scroll loading for React, especially for mobile.
+ * Event-driven, fully-controlled infinite scroll loading for React.
  * https://github.com/JasonBoy/react-infinite-loading
  */
 
@@ -9,8 +9,6 @@
 import {EventEmitter} from 'fbemitter';
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import styled from 'styled-components';
 
 import Loading from '../Loading';
 
@@ -32,13 +30,18 @@ class InfiniteLoading extends React.Component {
     this.clear = this.clear.bind(this);
     this.destroy = this.destroy.bind(this);
     this.reInitHandler = this.reInitHandler.bind(this);
+    this.toggleLoadingDone = this.toggleLoadingDone.bind(this);
 
     this.initialLoad = this.props.initialLoad !== false;
+    this.state = {
+      loadingDone: false,
+    }
   }
 
   componentDidMount() {
     this.initHandler();
     this.reInitializeListener = emitter.addListener(TYPE.REINITIALIZE, (cb) => {
+      this.toggleLoadingDone(false);
       this.reInitHandler();
       cb && cb();
     });
@@ -66,7 +69,7 @@ class InfiniteLoading extends React.Component {
     // const loadingText = $scope.loadingText || 'loading...';
     this.offset = this.props.offset === undefined ? 0 : this.props.offset;
     //to prevent loading too often
-    this.waitDuration = this.props.waitDuration === undefined ? 100 : this.props.waitDuration;
+    this.delay = this.props.delay === undefined ? 100 : this.props.delay;
     this.allLoaded = false;
     // this.firstTime = true;
 
@@ -78,14 +81,18 @@ class InfiniteLoading extends React.Component {
 
     this.allLoadedListener = emitter.addListener(TYPE.ALL_LOADED, () => {
       this.clear();
+      this.toggleLoadingDone(true);
       console.log('all loaded...');
     });
 
     window.addEventListener('scroll', this.scrollHandler, false);
     if (this.initialLoad) {
       //init one
-      console.log('init loading...');
-      emitter.emit(TYPE.INIT_LOADING);
+      setTimeout(() => {
+        console.log('init loading...');
+        this.toggleLoadingDone(false);
+        emitter.emit(TYPE.INIT_LOADING);
+      }, this.delay);
     }
 
   }
@@ -112,16 +119,27 @@ class InfiniteLoading extends React.Component {
       // this.firstTime = false;
       this.loading = true;
       // this.loadingDom.style.visibility = 'visible';
-      this.waitTimer = setTimeout(function () {
+      this.waitTimer = setTimeout(() => {
         console.log('loading...');
+        this.toggleLoadingDone(false);
         emitter.emit(TYPE.LOADING);
-      }, this.waitDuration);
+      }, this.delay);
     }
   }
 
+  toggleLoadingDone(loadingDone = true) {
+    this.setState({
+      loadingDone,
+    })
+  }
+
   render() {
+    const style = {
+      display: this.state.loadingDone ? 'none' : 'block',
+    };
     return (
-      <div className={classnames('infinite-loading')}
+      <div className="infinite-loading"
+           style={style}
            ref={ele => this.loadingDom = ele}
       >
         {this.props.children || <Loading/>}
@@ -132,7 +150,7 @@ class InfiniteLoading extends React.Component {
 
 InfiniteLoading.propTypes = {
   offset: PropTypes.number,
-  waitDuration: PropTypes.number,
+  delay: PropTypes.number,
   text: PropTypes.string,
   initialLoad: PropTypes.bool,
 };
