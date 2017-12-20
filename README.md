@@ -1,4 +1,6 @@
 # react-infinite-loading
+[![npm](https://img.shields.io/npm/v/react-infinite-loading.svg)](https://www.npmjs.com/package/react-infinite-loading)
+
 📜Event-driven, fully-controlled infinite scroll loading for React
 
 <p><img src="https://raw.githubusercontent.com/JasonBoy/react-infinite-loading/master/demo/demo.gif" width="186" height="auto" alt="react-infinite-loading-demo"/></p>
