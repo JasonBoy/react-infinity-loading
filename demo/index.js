@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import InfiniteLoading, {emitter, TYPE} from '../dist/react-infinite-loading';
+// import InfiniteLoading, {emitter, TYPE} from '../dist/react-infinite-loading';
+import InfiniteLoading, {emitter, TYPE, EventEmitter} from '../components/InfiniteLoading';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,11 +10,15 @@ class App extends React.Component {
     this.loadData = this.loadData.bind(this);
     this.reInit = this.reInit.bind(this);
 
-    this.initLoadingListener = emitter.addListener(TYPE.INIT_LOADING, () => {
+    //if you don't create EventEmitter instance, use the default emitter exported above,
+    //in which case you don't need to pass the custom emitter to <InfiniteLoading/>
+    this.emitter = new EventEmitter();
+
+    this.initLoadingListener = this.emitter.addListener(TYPE.INIT_LOADING, () => {
       this.loadData();
     });
 
-    this.loadingListener = emitter.addListener(TYPE.LOADING, () => {
+    this.loadingListener = this.emitter.addListener(TYPE.LOADING, () => {
       this.loadData();
     });
 
@@ -48,7 +53,7 @@ class App extends React.Component {
     }
     const newData = this.state.data.concat(temp);
     const hasMore = newData.length < this.state.totalRecords;
-    emitter.emit(hasMore ? TYPE.LOADING_FINISHED : TYPE.ALL_LOADED);
+    this.emitter.emit(hasMore ? TYPE.LOADING_FINISHED : TYPE.ALL_LOADED);
     this.setState({
       data: newData,
       hasMore,
@@ -73,7 +78,7 @@ class App extends React.Component {
       data: [],
     });
     setTimeout(() => {
-      emitter.emit(TYPE.REINITIALIZE);
+      this.emitter.emit(TYPE.REINITIALIZE);
     }, 0);
   }
 
@@ -91,7 +96,7 @@ class App extends React.Component {
             })
           }
         </ul>
-        <InfiniteLoading delay={1000}/>
+        <InfiniteLoading className="il-custom" delay={1000} emitter={this.emitter}/>
         {
           !this.state.hasMore && (
             <div>
