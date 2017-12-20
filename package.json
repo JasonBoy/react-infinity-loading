@@ -1,6 +1,6 @@
 {
   "name": "react-infinite-loading",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Event-driven, fully-controlled infinite scroll loading for React, especially for mobile",
   "main": "dist/react-infinite-loading.js",
   "module": "components/InfiniteLoading/InfiniteLoading.jsx",
