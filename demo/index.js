@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import InfiniteLoading, {emitter, TYPE} from '../dist/react-infinite-loading';
 import InfiniteLoading, {emitter, TYPE, EventEmitter} from '../components/InfiniteLoading';
+import Loading from '../components/Loading';
 
 class App extends React.Component {
   constructor(props) {
@@ -96,7 +97,7 @@ class App extends React.Component {
             })
           }
         </ul>
-        <InfiniteLoading className="il-custom" delay={1000} emitter={this.emitter}/>
+        <InfiniteLoading className="il-custom" delay={1000} emitter={this.emitter} loader={<Loading/>}/>
         {
           !this.state.hasMore && (
             <div>

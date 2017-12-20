@@ -3083,7 +3083,7 @@ spdx-license-ids@^1.0.2:
 
 spinkit@^1.2.5:
   version "1.2.5"
-  resolved "http://registry.npm.taobao.org/spinkit/download/spinkit-1.2.5.tgz#90f9f466a20e8e39ef24da959c1e611c2a30dd54"
+  resolved "https://registry.yarnpkg.com/spinkit/-/spinkit-1.2.5.tgz#90f9f466a20e8e39ef24da959c1e611c2a30dd54"
 
 sprintf-js@~1.0.2:
   version "1.0.3"

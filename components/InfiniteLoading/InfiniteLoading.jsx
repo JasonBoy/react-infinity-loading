@@ -10,8 +10,6 @@ import {EventEmitter as ee} from 'fbemitter';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Loading from '../Loading';
-
 export const EventEmitter = ee;
 export const emitter = new EventEmitter();
 export const TYPE = {
@@ -140,7 +138,7 @@ class InfiniteLoading extends React.Component {
            style={style}
            ref={ele => this.loadingDom = ele}
       >
-        {this.props.children || <Loading/>}
+        {this.props.loader || this.props.children || 'Loading...'}
       </div>
     );
   }
@@ -163,6 +161,12 @@ InfiniteLoading.propTypes = {
   initialLoad: PropTypes.bool,
   //pass custom emitter instance instead of using the one exported
   emitter: PropTypes.instanceOf(EventEmitter),
+  //custom loader
+  loader: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+    PropTypes.element,
+  ])
 };
 
 export default InfiniteLoading;

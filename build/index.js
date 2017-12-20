@@ -9750,6 +9750,10 @@ var _InfiniteLoading = __webpack_require__(195);
 
 var _InfiniteLoading2 = _interopRequireDefault(_InfiniteLoading);
 
+var _Loading = __webpack_require__(196);
+
+var _Loading2 = _interopRequireDefault(_Loading);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9872,7 +9876,7 @@ var App = function (_React$Component) {
             );
           })
         ),
-        _react2.default.createElement(_InfiniteLoading2.default, { className: 'il-custom', delay: 1000, emitter: this.emitter }),
+        _react2.default.createElement(_InfiniteLoading2.default, { className: 'il-custom', delay: 1000, emitter: this.emitter, loader: _react2.default.createElement(_Loading2.default, null) }),
         !this.state.hasMore && _react2.default.createElement(
           'div',
           null,
@@ -23243,10 +23247,6 @@ var _propTypes = __webpack_require__(204);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Loading = __webpack_require__(196);
-
-var _Loading2 = _interopRequireDefault(_Loading);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23413,7 +23413,7 @@ var InfiniteLoading = function (_React$Component) {
             return _this5.loadingDom = ele;
           }
         },
-        this.props.children || _react2.default.createElement(_Loading2.default, null)
+        this.props.loader || this.props.children || 'Loading...'
       );
     }
   }]);
@@ -23437,7 +23437,9 @@ InfiniteLoading.propTypes = {
   //if need to emit the INIT_LOADING event initially
   initialLoad: _propTypes2.default.bool,
   //pass custom emitter instance instead of using the one exported
-  emitter: _propTypes2.default.instanceOf(EventEmitter)
+  emitter: _propTypes2.default.instanceOf(EventEmitter),
+  //custom loader
+  loader: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node, _propTypes2.default.element])
 };
 
 exports.default = InfiniteLoading;
