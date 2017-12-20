@@ -44,10 +44,10 @@
   },
   "dependencies": {
     "fbemitter": "^2.1.1",
-    "prop-types": "^15.5.10",
+    "prop-types": ">=15.5.10",
     "spinkit": "^1.2.5"
   },
   "peerDependencies": {
-    "react": "^15.6.1"
+    "react": ">=15.6.1"
   }
 }
