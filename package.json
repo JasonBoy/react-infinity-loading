@@ -8,8 +8,8 @@
     "build:dev": "NODE_ENV=development webpack --progress --config webpack.config.build.js",
     "build:prod": "NODE_ENV=production webpack --progress --config webpack.config.build.js",
     "build": "npm run build:dev && npm run build:prod && npm run build:demo",
-    "build:demo": "webpack --progress --config webpack.config.js",
-    "watch": "webpack --watch --progress --config webpack.config.js",
+    "build:demo": "webpack --progress --config webpack.config.demo.js",
+    "watch": "webpack --watch --progress --config webpack.config.demo.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
