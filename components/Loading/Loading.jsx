@@ -1,5 +1,5 @@
 import React from 'react';
-// import 'spinkit/css/spinners/10-fading-circle.css';
+import 'spinkit/css/spinners/10-fading-circle.css';
 
 class Loading extends React.Component {
   constructor(props) {
