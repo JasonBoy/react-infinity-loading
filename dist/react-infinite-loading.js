@@ -7,7 +7,7 @@
 		exports["InfiniteLoading"] = factory(require("react"));
 	else
 		root["InfiniteLoading"] = factory(root["react"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_0__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_8__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -73,17 +73,11 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -115,7 +109,7 @@ function _inherits(subClass, superClass) {
   }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 }
 
-var EventSubscription = __webpack_require__(12);
+var EventSubscription = __webpack_require__(11);
 
 /**
  * EmitterSubscription represents a subscription with listener and context data.
@@ -147,7 +141,7 @@ var EmitterSubscription = function (_EventSubscription) {
 module.exports = EmitterSubscription;
 
 /***/ }),
-/* 2 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -208,7 +202,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -226,7 +220,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -268,7 +262,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 module.exports = emptyFunction;
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -327,7 +321,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -341,7 +335,7 @@ module.exports = invariant;
 
 
 
-var emptyFunction = __webpack_require__(4);
+var emptyFunction = __webpack_require__(3);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -395,73 +389,7 @@ if (true) {
 module.exports = warning;
 
 /***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// import 'spinkit/css/spinners/10-fading-circle.css';
-
-var Loading = function (_React$Component) {
-  _inherits(Loading, _React$Component);
-
-  function Loading(props) {
-    _classCallCheck(this, Loading);
-
-    return _possibleConstructorReturn(this, (Loading.__proto__ || Object.getPrototypeOf(Loading)).call(this, props));
-  }
-
-  _createClass(Loading, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {}
-  }, {
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { className: "sk-fading-circle default-infinite-loading" },
-        _react2.default.createElement("div", { className: "sk-circle1 sk-circle" }),
-        _react2.default.createElement("div", { className: "sk-circle2 sk-circle" }),
-        _react2.default.createElement("div", { className: "sk-circle3 sk-circle" }),
-        _react2.default.createElement("div", { className: "sk-circle4 sk-circle" }),
-        _react2.default.createElement("div", { className: "sk-circle5 sk-circle" }),
-        _react2.default.createElement("div", { className: "sk-circle6 sk-circle" }),
-        _react2.default.createElement("div", { className: "sk-circle7 sk-circle" }),
-        _react2.default.createElement("div", { className: "sk-circle8 sk-circle" }),
-        _react2.default.createElement("div", { className: "sk-circle9 sk-circle" }),
-        _react2.default.createElement("div", { className: "sk-circle10 sk-circle" }),
-        _react2.default.createElement("div", { className: "sk-circle11 sk-circle" }),
-        _react2.default.createElement("div", { className: "sk-circle12 sk-circle" })
-      );
-    }
-  }]);
-
-  return Loading;
-}(_react2.default.Component);
-
-exports.default = Loading;
-
-/***/ }),
-/* 8 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -477,14 +405,14 @@ exports.default = Loading;
  */
 
 var fbemitter = {
-  EventEmitter: __webpack_require__(11),
-  EmitterSubscription: __webpack_require__(1)
+  EventEmitter: __webpack_require__(10),
+  EmitterSubscription: __webpack_require__(0)
 };
 
 module.exports = fbemitter;
 
 /***/ }),
-/* 9 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -509,7 +437,7 @@ if (true) {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(17)(isValidElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(16)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
@@ -517,7 +445,13 @@ if (true) {
 }
 
 /***/ }),
-/* 10 */
+/* 8 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_8__;
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -532,23 +466,19 @@ if (true) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.TYPE = exports.emitter = undefined;
+exports.TYPE = exports.emitter = exports.EventEmitter = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _fbemitter = __webpack_require__(8);
+var _fbemitter = __webpack_require__(6);
 
-var _react = __webpack_require__(0);
+var _react = __webpack_require__(8);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(9);
+var _propTypes = __webpack_require__(7);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _Loading = __webpack_require__(7);
-
-var _Loading2 = _interopRequireDefault(_Loading);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -558,7 +488,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var emitter = exports.emitter = new _fbemitter.EventEmitter();
+var EventEmitter = exports.EventEmitter = _fbemitter.EventEmitter;
+var emitter = exports.emitter = new EventEmitter();
 var TYPE = exports.TYPE = {
   INIT_LOADING: 'IL_INIT_LOADING',
   LOADING: '  IL_LOADING',
@@ -582,7 +513,8 @@ var InfiniteLoading = function (_React$Component) {
     _this.reInitHandler = _this.reInitHandler.bind(_this);
     _this.toggleLoadingDone = _this.toggleLoadingDone.bind(_this);
 
-    _this.initialLoad = _this.props.initialLoad !== false;
+    _this.initialLoad = _this.props.initialLoad;
+    _this.emitter = _this.props.emitter || emitter;
     _this.state = {
       loadingDone: false
     };
@@ -595,7 +527,7 @@ var InfiniteLoading = function (_React$Component) {
       var _this2 = this;
 
       this.initHandler();
-      this.reInitializeListener = emitter.addListener(TYPE.REINITIALIZE, function (cb) {
+      this.reInitializeListener = this.emitter.addListener(TYPE.REINITIALIZE, function (cb) {
         _this2.toggleLoadingDone(false);
         _this2.reInitHandler();
         cb && cb();
@@ -613,7 +545,7 @@ var InfiniteLoading = function (_React$Component) {
     value: function reInitHandler() {
       this.clear();
       this.destroy();
-      console.log('reinit loading...');
+      this.log('reinitialize loading...');
       this.initHandler();
     }
   }, {
@@ -621,37 +553,32 @@ var InfiniteLoading = function (_React$Component) {
     value: function initHandler() {
       var _this3 = this;
 
-      // this.loadingDom.style.visibility = 'visible';
-      // this.loadingDom.style.display = 'block';
       this.screenHeight = window.screen.availHeight;
       this.loading = false;
       this.scale = 1;
-      // const loadingText = $scope.loadingText || 'loading...';
-      this.offset = this.props.offset === undefined ? 0 : this.props.offset;
+      this.offset = this.props.offset;
       //to prevent loading too often
-      this.delay = this.props.delay === undefined ? 100 : this.props.delay;
+      this.delay = this.props.delay;
       this.allLoaded = false;
-      // this.firstTime = true;
 
-      this.loadingFinishedListerner = emitter.addListener(TYPE.LOADING_FINISHED, function () {
+      this.loadingFinishedListerner = this.emitter.addListener(TYPE.LOADING_FINISHED, function () {
         _this3.loading = false;
-        // this.loadingDom.style.visibility = 'hidden';
-        console.log('loading done...');
+        _this3.log('loading done...');
       });
 
-      this.allLoadedListener = emitter.addListener(TYPE.ALL_LOADED, function () {
+      this.allLoadedListener = this.emitter.addListener(TYPE.ALL_LOADED, function () {
         _this3.clear();
         _this3.toggleLoadingDone(true);
-        console.log('all loaded...');
+        _this3.log('all loaded...');
       });
 
       window.addEventListener('scroll', this.scrollHandler, false);
       if (this.initialLoad) {
         //init one
         setTimeout(function () {
-          console.log('init loading...');
+          _this3.log('init loading...');
           _this3.toggleLoadingDone(false);
-          emitter.emit(TYPE.INIT_LOADING);
+          _this3.emitter.emit(TYPE.INIT_LOADING);
         }, this.delay);
       }
     }
@@ -660,8 +587,6 @@ var InfiniteLoading = function (_React$Component) {
     value: function clear() {
       this.allLoaded = true;
       this.loading = false;
-      // this.loadingDom.style.visibility = 'hidden';
-      // this.loadingDom.style.display = 'none';
       window.removeEventListener('scroll', this.scrollHandler, false);
     }
   }, {
@@ -678,15 +603,12 @@ var InfiniteLoading = function (_React$Component) {
 
       if (this.loading || this.allLoaded) return;
       var position = this.loadingDom.getBoundingClientRect();
-      // if (!this.firstTime) return;
       if (this.screenHeight - position.bottom * this.scale >= this.offset) {
-        // this.firstTime = false;
         this.loading = true;
-        // this.loadingDom.style.visibility = 'visible';
         this.waitTimer = setTimeout(function () {
-          console.log('loading...');
+          _this4.log('loading...');
           _this4.toggleLoadingDone(false);
-          emitter.emit(TYPE.LOADING);
+          _this4.emitter.emit(TYPE.LOADING);
         }, this.delay);
       }
     }
@@ -700,6 +622,14 @@ var InfiniteLoading = function (_React$Component) {
       });
     }
   }, {
+    key: 'log',
+    value: function log(msg) {
+      var level = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'log';
+
+      if (false) return;
+      console[level](msg);
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this5 = this;
@@ -707,15 +637,16 @@ var InfiniteLoading = function (_React$Component) {
       var style = {
         display: this.state.loadingDone ? 'none' : 'block'
       };
+      var className = this.props.className ? ' ' + this.props.className : '';
       return _react2.default.createElement(
         'div',
-        { className: 'infinite-loading',
+        { className: 'infinite-loading' + className,
           style: style,
           ref: function ref(ele) {
             return _this5.loadingDom = ele;
           }
         },
-        this.props.children || _react2.default.createElement(_Loading2.default, null)
+        this.props.loader || this.props.children || 'Loading...'
       );
     }
   }]);
@@ -723,17 +654,31 @@ var InfiniteLoading = function (_React$Component) {
   return InfiniteLoading;
 }(_react2.default.Component);
 
+InfiniteLoading.defaultProps = {
+  offset: 0,
+  delay: 0,
+  initialLoad: true
+};
+
 InfiniteLoading.propTypes = {
+  //add custom css classes
+  className: _propTypes2.default.string,
+  //offset to the bottom when considering loading more
   offset: _propTypes2.default.number,
+  //delay of ms before loading more
   delay: _propTypes2.default.number,
-  text: _propTypes2.default.string,
-  initialLoad: _propTypes2.default.bool
+  //if need to emit the INIT_LOADING event initially
+  initialLoad: _propTypes2.default.bool,
+  //pass custom emitter instance instead of using the one exported
+  emitter: _propTypes2.default.instanceOf(EventEmitter),
+  //custom loader
+  loader: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node, _propTypes2.default.element])
 };
 
 exports.default = InfiniteLoading;
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -757,11 +702,11 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var EmitterSubscription = __webpack_require__(1);
-var EventSubscriptionVendor = __webpack_require__(13);
+var EmitterSubscription = __webpack_require__(0);
+var EventSubscriptionVendor = __webpack_require__(12);
 
-var emptyFunction = __webpack_require__(14);
-var invariant = __webpack_require__(2);
+var emptyFunction = __webpack_require__(13);
+var invariant = __webpack_require__(1);
 
 /**
  * @class BaseEventEmitter
@@ -934,7 +879,7 @@ var BaseEventEmitter = function () {
 module.exports = BaseEventEmitter;
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -993,7 +938,7 @@ var EventSubscription = function () {
 module.exports = EventSubscription;
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1017,7 +962,7 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var invariant = __webpack_require__(2);
+var invariant = __webpack_require__(1);
 
 /**
  * EventSubscriptionVendor stores a set of EventSubscriptions that are
@@ -1106,7 +1051,7 @@ var EventSubscriptionVendor = function () {
 module.exports = EventSubscriptionVendor;
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1150,7 +1095,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 module.exports = emptyFunction;
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1246,7 +1191,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 };
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1262,9 +1207,9 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 if (true) {
-  var invariant = __webpack_require__(5);
-  var warning = __webpack_require__(6);
-  var ReactPropTypesSecret = __webpack_require__(3);
+  var invariant = __webpack_require__(4);
+  var warning = __webpack_require__(5);
+  var ReactPropTypesSecret = __webpack_require__(2);
   var loggedTypeFailures = {};
 }
 
@@ -1313,7 +1258,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 module.exports = checkPropTypes;
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1328,13 +1273,13 @@ module.exports = checkPropTypes;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var emptyFunction = __webpack_require__(4);
-var invariant = __webpack_require__(5);
-var warning = __webpack_require__(6);
-var assign = __webpack_require__(15);
+var emptyFunction = __webpack_require__(3);
+var invariant = __webpack_require__(4);
+var warning = __webpack_require__(5);
+var assign = __webpack_require__(14);
 
-var ReactPropTypesSecret = __webpack_require__(3);
-var checkPropTypes = __webpack_require__(16);
+var ReactPropTypesSecret = __webpack_require__(2);
+var checkPropTypes = __webpack_require__(15);
 
 module.exports = function (isValidElement, throwOnDirectAccess) {
   /* global Symbol */
