@@ -1,7 +1,7 @@
 # react-infinite-loading
 📜Event-driven, fully-controlled infinite scroll loading for React
 
-![react-infinite-loading-demo](https://raw.githubusercontent.com/JasonBoy/react-infinite-loading/master/demo/demo.gif)
+<p><img src="https://raw.githubusercontent.com/JasonBoy/react-infinite-loading/master/demo/demo.gif" width="375" height="auto" alt="react-infinite-loading-demo"/></p>
 
 ### Why
 
