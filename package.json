@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Event-driven, fully-controlled infinite scroll loading for React, especially for mobile",
   "main": "dist/react-infinite-loading.js",
-  "main:next": "components/InfiniteLoading/InfiniteLoading.jsx",
+  "module": "components/InfiniteLoading/InfiniteLoading.jsx",
   "scripts": {
     "build:dev": "NODE_ENV=development webpack --progress --config webpack.config.build.js",
     "build:prod": "NODE_ENV=production webpack --progress --config webpack.config.build.js",
