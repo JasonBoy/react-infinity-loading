@@ -1,9 +1,9 @@
-# react-infinite-loading
-[![npm](https://img.shields.io/npm/v/react-infinite-loading.svg)](https://www.npmjs.com/package/react-infinite-loading)
+# react-infinity-loading
+[![npm](https://img.shields.io/npm/v/react-infinity-loading.svg)](https://www.npmjs.com/package/react-infinity-loading)
 
 📜Event-driven, fully-controlled infinite scroll loading for React
 
-<p><img src="https://raw.githubusercontent.com/JasonBoy/react-infinite-loading/master/demo/demo.gif" width="186" height="auto" alt="react-infinite-loading-demo"/></p>
+<p><img src="https://raw.githubusercontent.com/JasonBoy/react-infinity-loading/master/demo/demo.gif" width="186" height="auto" alt="react-infinity-loading-demo"/></p>
 
 ### Why
 
@@ -11,13 +11,13 @@ There are a lot of infinite scroll components out there, and I tried some of the
 
 ## Usage
 
-`npm i react-infinite-loading --save` or `yarn add react-infinite-loading`
+`npm i react-infinity-loading --save` or `yarn add react-infinity-loading`
 
 and in your component:
 ```javascript
-import InfiniteLoading, {emitter, TYPE, EventEmitter} from 'react-infinite-loading';
+import InfiniteLoading, {emitter, TYPE, EventEmitter} from 'react-infinity-loading';
 //demo loading component
-import Loading from 'react-infinite-loading/components/Loading';
+import Loading from 'react-infinity-loading/components/Loading';
 
 class App extends React.Component {
   constructor(props) {
