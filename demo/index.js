@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import InfiniteLoading, {emitter, TYPE} from '../dist/react-infinite-loading';
-import InfiniteLoading, {emitter, TYPE, EventEmitter} from '../components/InfiniteLoading';
+import InfiniteLoading, {emitter, TYPE, EventEmitter} from '../dist/react-infinite-loading';
+// import InfiniteLoading, {emitter, TYPE, EventEmitter} from '../components/InfiniteLoading';
 import Loading from '../components/Loading';
 
 class App extends React.Component {
