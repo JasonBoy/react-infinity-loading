@@ -13,6 +13,26 @@ const config = {
     library: 'InfiniteLoading',
     libraryTarget: 'umd',
   },
+  externals: {
+    react: {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react',
+      root: 'react',
+    },
+    // fbemitter: {
+    //   commonjs: 'fbemitter',
+    //   commonjs2: 'fbemitter',
+    //   amd: 'fbemitter',
+    //   root: 'fbemitter',
+    // },
+    // 'prop-types': {
+    //   commonjs: 'prop-types',
+    //   commonjs2: 'prop-types',
+    //   amd: 'prop-types',
+    //   root: 'prop-types',
+    // },
+  },
   module: {
     rules: [
       {

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import InfiniteLoading, {emitter, TYPE} from '../';
+import InfiniteLoading, {emitter, TYPE} from '../dist/react-infinite-loading';
 
 class App extends React.Component {
   constructor(props) {
