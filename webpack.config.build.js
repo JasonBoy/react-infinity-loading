@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 const PROD_MODE = process.env.NODE_ENV === 'production';
 
-const entry = path.resolve(__dirname, 'components/InfiniteLoading/InfiniteLoading.jsx');
+const entry = path.resolve(__dirname, 'components/InfiniteLoading/InfiniteLoading.js');
 
 const config = {
   entry: entry,

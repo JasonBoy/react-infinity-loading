@@ -2,5 +2,5 @@
   "name": "Loading",
   "version": "0.0.1",
   "private": true,
-  "main": "Loading.jsx"
+  "main": "Loading.js"
 }
