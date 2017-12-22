@@ -927,7 +927,7 @@ var Loading = function (_React$Component) {
       /*!
        * @license MIT
        * Event-driven, fully-controlled infinite scroll loading for React.
-       * https://github.com/JasonBoy/react-infinite-loading
+       * https://github.com/JasonBoy/react-infinity-loading
        */
 
       var _createClass = function () {

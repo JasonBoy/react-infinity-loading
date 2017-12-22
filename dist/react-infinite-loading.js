@@ -401,7 +401,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /*!
  * @license MIT
  * Event-driven, fully-controlled infinite scroll loading for React.
- * https://github.com/JasonBoy/react-infinite-loading
+ * https://github.com/JasonBoy/react-infinity-loading
  */
 
 
