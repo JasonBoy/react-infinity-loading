@@ -56,7 +56,7 @@ class InfiniteLoading extends React.Component {
   reInitHandler() {
     this.clear();
     this.destroy();
-    this.log('reinitialize loading...');
+    this.log('Reinitializing InfiniteLoading status...');
     this.initHandler();
   }
 
@@ -71,20 +71,20 @@ class InfiniteLoading extends React.Component {
 
     this.loadingFinishedListerner = this.emitter.addListener(TYPE.LOADING_FINISHED, () => {
       this.loading = false;
-      this.log('loading done...');
+      this.log('Current loading done...');
     });
 
     this.allLoadedListener = this.emitter.addListener(TYPE.ALL_LOADED, () => {
       this.clear();
       this.toggleLoadingDone(true);
-      this.log('all loaded...');
+      this.log('All loaded...');
     });
 
     window.addEventListener('scroll', this.scrollHandler, false);
     if (this.initialLoad) {
       //init one
       setTimeout(() => {
-        this.log('init loading...');
+        this.log('Emitting INIT_LOADING event...');
         this.toggleLoadingDone(false);
         this.emitter.emit(TYPE.INIT_LOADING);
       }, this.delay);
@@ -110,7 +110,7 @@ class InfiniteLoading extends React.Component {
     if ((this.screenHeight - position.bottom * this.scale) >= this.offset) {
       this.loading = true;
       this.waitTimer = setTimeout(() => {
-        this.log('loading...');
+        this.log('Emitting LOADING event...');
         this.toggleLoadingDone(false);
         this.emitter.emit(TYPE.LOADING);
       }, this.delay);
