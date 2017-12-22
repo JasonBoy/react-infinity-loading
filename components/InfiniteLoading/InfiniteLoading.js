@@ -6,7 +6,7 @@
 
 'use strict';
 
-import {EventEmitter as ee} from 'fbemitter';
+import { EventEmitter as ee } from 'fbemitter';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -35,16 +35,19 @@ class InfiniteLoading extends React.Component {
     this.emitter = this.props.emitter || emitter;
     this.state = {
       loadingDone: false,
-    }
+    };
   }
 
   componentDidMount() {
     this.initHandler();
-    this.reInitializeListener = this.emitter.addListener(TYPE.REINITIALIZE, (cb) => {
-      this.toggleLoadingDone(false);
-      this.reInitHandler();
-      cb && cb();
-    });
+    this.reInitializeListener = this.emitter.addListener(
+      TYPE.REINITIALIZE,
+      cb => {
+        this.toggleLoadingDone(false);
+        this.reInitHandler();
+        cb && cb();
+      }
+    );
   }
 
   componentWillUnmount() {
@@ -69,10 +72,13 @@ class InfiniteLoading extends React.Component {
     this.delay = this.props.delay;
     this.allLoaded = false;
 
-    this.loadingFinishedListerner = this.emitter.addListener(TYPE.LOADING_FINISHED, () => {
-      this.loading = false;
-      this.log('Current loading done...');
-    });
+    this.loadingFinishedListerner = this.emitter.addListener(
+      TYPE.LOADING_FINISHED,
+      () => {
+        this.loading = false;
+        this.log('Current loading done...');
+      }
+    );
 
     this.allLoadedListener = this.emitter.addListener(TYPE.ALL_LOADED, () => {
       this.clear();
@@ -89,7 +95,6 @@ class InfiniteLoading extends React.Component {
         this.emitter.emit(TYPE.INIT_LOADING);
       }, this.delay);
     }
-
   }
 
   clear() {
@@ -107,7 +112,7 @@ class InfiniteLoading extends React.Component {
   scrollHandler() {
     if (this.loading || this.allLoaded) return;
     const position = this.loadingDom.getBoundingClientRect();
-    if ((this.screenHeight - position.bottom * this.scale) >= this.offset) {
+    if (this.screenHeight - position.bottom * this.scale >= this.offset) {
       this.loading = true;
       this.waitTimer = setTimeout(() => {
         this.log('Emitting LOADING event...');
@@ -120,11 +125,11 @@ class InfiniteLoading extends React.Component {
   toggleLoadingDone(loadingDone = true) {
     this.setState({
       loadingDone,
-    })
+    });
   }
-  
+
   log(msg, level = 'log') {
-    if(process.env.NODE_ENV === 'production') return;
+    if (process.env.NODE_ENV === 'production') return;
     console[level](msg);
   }
 
@@ -134,9 +139,10 @@ class InfiniteLoading extends React.Component {
     };
     const className = this.props.className ? ` ${this.props.className}` : '';
     return (
-      <div className={`infinite-loading${className}`}
-           style={style}
-           ref={ele => this.loadingDom = ele}
+      <div
+        className={`infinite-loading${className}`}
+        style={style}
+        ref={ele => (this.loadingDom = ele)}
       >
         {this.props.loader || this.props.children || 'Loading...'}
       </div>
@@ -166,7 +172,7 @@ InfiniteLoading.propTypes = {
     PropTypes.string,
     PropTypes.node,
     PropTypes.element,
-  ])
+  ]),
 };
 
 export default InfiniteLoading;

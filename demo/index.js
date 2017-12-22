@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import InfiniteLoading, {emitter, TYPE, EventEmitter} from '../dist/react-infinite-loading';
+import InfiniteLoading, {
+  emitter,
+  TYPE,
+  EventEmitter,
+} from '../dist/react-infinite-loading';
 // import InfiniteLoading, {emitter, TYPE, EventEmitter} from '../components/InfiniteLoading';
 import Loading from '../components/Loading';
 
@@ -15,9 +19,12 @@ class App extends React.Component {
     //in which case you don't need to pass the custom emitter to <InfiniteLoading/>
     this.emitter = new EventEmitter();
 
-    this.initLoadingListener = this.emitter.addListener(TYPE.INIT_LOADING, () => {
-      this.loadData();
-    });
+    this.initLoadingListener = this.emitter.addListener(
+      TYPE.INIT_LOADING,
+      () => {
+        this.loadData();
+      }
+    );
 
     this.loadingListener = this.emitter.addListener(TYPE.LOADING, () => {
       this.loadData();
@@ -42,15 +49,20 @@ class App extends React.Component {
   }
 
   loadData() {
-    if(this.loading || !this.state.hasMore) {
+    if (this.loading || !this.state.hasMore) {
       return;
     }
     this.loading = true;
     const temp = [];
-    for(let i = 0; i < this.pagination.pageSize; i++) {
-      temp.push(Object.assign({
-        position: this.pagination.page * this.pagination.pageSize + i + 1,
-      }, this.mock));
+    for (let i = 0; i < this.pagination.pageSize; i++) {
+      temp.push(
+        Object.assign(
+          {
+            position: this.pagination.page * this.pagination.pageSize + i + 1,
+          },
+          this.mock
+        )
+      );
     }
     const newData = this.state.data.concat(temp);
     const hasMore = newData.length < this.state.totalRecords;
@@ -87,31 +99,33 @@ class App extends React.Component {
     return (
       <div>
         <ul>
-          {
-            this.state.data.map((item, index) => {
-              return (
-                <li key={index}>
-                  <h2 style={{textAlign: 'center', margin: '50px auto'}}>{item.position}-{item.title}</h2>
-                </li>
-              )
-            })
-          }
+          {this.state.data.map((item, index) => {
+            return (
+              <li key={index}>
+                <h2 style={{ textAlign: 'center', margin: '50px auto' }}>
+                  {item.position}-{item.title}
+                </h2>
+              </li>
+            );
+          })}
         </ul>
-        <InfiniteLoading className="il-custom" delay={1000} emitter={this.emitter} loader={<Loading/>}/>
-        {
-          !this.state.hasMore && (
-            <div>
-              <p style={{textAlign: 'center'}}>All Loaded</p>
-              <a href="" onClick={this.reInit}>Try Again</a>
-            </div>
-          )
-        }
+        <InfiniteLoading
+          className="il-custom"
+          delay={1000}
+          emitter={this.emitter}
+          loader={<Loading />}
+        />
+        {!this.state.hasMore && (
+          <div>
+            <p style={{ textAlign: 'center' }}>All Loaded</p>
+            <a href="" onClick={this.reInit}>
+              Try Again
+            </a>
+          </div>
+        )}
       </div>
-    )
+    );
   }
 }
 
-ReactDOM.render(
-  <App/>,
-  document.getElementById('app')
-);
+ReactDOM.render(<App />, document.getElementById('app'));
