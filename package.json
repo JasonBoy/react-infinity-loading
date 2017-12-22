@@ -10,7 +10,11 @@
     "build": "npm run build:dev && npm run build:prod && npm run build:demo",
     "build:demo": "webpack --progress --config webpack.config.demo.js",
     "watch": "webpack --watch --progress --config webpack.config.demo.js",
+    "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged": {
+    "*.{js}": ["prettier --write", "git add ."]
   },
   "repository": {
     "type": "git",
@@ -40,7 +44,9 @@
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "html-webpack-plugin": "^2.30.1",
+    "husky": "^0.14.3",
     "jest": "^22.0.3",
+    "lint-staged": "^6.0.0",
     "prettier": "1.9.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
