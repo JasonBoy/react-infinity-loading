@@ -1,7 +1,7 @@
 /*!
  * @license MIT
  * Event-driven, fully-controlled infinite scroll loading for React.
- * https://github.com/JasonBoy/react-infinite-loading
+ * https://github.com/JasonBoy/react-infinity-loading
  */
 
 'use strict';
