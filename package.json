@@ -1,6 +1,6 @@
 {
   "name": "react-infinity-loading",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Event-driven, fully-controlled infinite scroll loading for React, especially for mobile",
   "main": "dist/react-infinite-loading.js",
   "module": "components/InfiniteLoading/InfiniteLoading.js",
@@ -14,7 +14,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
-    "**/*.js": ["prettier --write", "git add"]
+    "**/*.js": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
