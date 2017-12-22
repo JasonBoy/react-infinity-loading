@@ -475,7 +475,7 @@ var InfiniteLoading = function (_React$Component) {
     value: function reInitHandler() {
       this.clear();
       this.destroy();
-      this.log('reinitialize loading...');
+      this.log('Reinitializing InfiniteLoading status...');
       this.initHandler();
     }
   }, {
@@ -493,20 +493,20 @@ var InfiniteLoading = function (_React$Component) {
 
       this.loadingFinishedListerner = this.emitter.addListener(TYPE.LOADING_FINISHED, function () {
         _this3.loading = false;
-        _this3.log('loading done...');
+        _this3.log('Current loading done...');
       });
 
       this.allLoadedListener = this.emitter.addListener(TYPE.ALL_LOADED, function () {
         _this3.clear();
         _this3.toggleLoadingDone(true);
-        _this3.log('all loaded...');
+        _this3.log('All loaded...');
       });
 
       window.addEventListener('scroll', this.scrollHandler, false);
       if (this.initialLoad) {
         //init one
         setTimeout(function () {
-          _this3.log('init loading...');
+          _this3.log('Emitting INIT_LOADING event...');
           _this3.toggleLoadingDone(false);
           _this3.emitter.emit(TYPE.INIT_LOADING);
         }, this.delay);
@@ -536,7 +536,7 @@ var InfiniteLoading = function (_React$Component) {
       if (this.screenHeight - position.bottom * this.scale >= this.offset) {
         this.loading = true;
         this.waitTimer = setTimeout(function () {
-          _this4.log('loading...');
+          _this4.log('Emitting LOADING event...');
           _this4.toggleLoadingDone(false);
           _this4.emitter.emit(TYPE.LOADING);
         }, this.delay);
@@ -570,7 +570,8 @@ var InfiniteLoading = function (_React$Component) {
       var className = this.props.className ? ' ' + this.props.className : '';
       return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
         'div',
-        { className: 'infinite-loading' + className,
+        {
+          className: 'infinite-loading' + className,
           style: style,
           ref: function ref(ele) {
             return _this5.loadingDom = ele;
