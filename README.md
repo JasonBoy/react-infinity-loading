@@ -1,5 +1,5 @@
 # react-infinity-loading
-[![npm](https://img.shields.io/npm/v/react-infinity-loading.svg)](https://www.npmjs.com/package/react-infinity-loading)
+[![npm](https://img.shields.io/npm/v/react-infinity-loading.svg?style=flat-square)](https://www.npmjs.com/package/react-infinity-loading)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 :surfer:Event-driven, fully-controlled infinite scroll loading for React
