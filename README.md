@@ -80,4 +80,4 @@ Open `./build/index.html` in your browser, and start scroll down the page.
 
 ## LICENSE
 
-MIT @ 2017-2018 [jason](https://blog.lovemily.me)
+MIT @ 2017-2019 [jason](https://blog.lovemily.me)
